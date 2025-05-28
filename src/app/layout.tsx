@@ -6,6 +6,7 @@ import Providers from '@/app/providers'
 
 import './globals.css'
 import { Toaster } from '@/components/ui/sonner'
+import Link from 'next/link'
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -35,10 +36,12 @@ export default function RootLayout({
                 <header className="h-16">
                     <nav className="bg-gray-800 p-4">
                         <div className="mx-auto">
-                            <h1 className="text-2xl text-white">
-                                UN OICT React Developer Role - Technical
-                                Assessment
-                            </h1>
+                            <Link href="/" className="text-white">
+                                <h1 className="text-2xl text-white">
+                                    UN OICT React Developer Role - Technical
+                                    Assessment
+                                </h1>
+                            </Link>
                         </div>
                     </nav>
                 </header>
