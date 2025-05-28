@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
             },
         ]
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '3003',
+                pathname: '/photos/**',
+            },
+        ],
+    },
 }
 
 export default nextConfig

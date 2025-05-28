@@ -1,4 +1,4 @@
-import { UploadPhotoRequest } from '@/features/photos/types'
+import { GetPhotosResponse, UploadPhotoRequest } from '@/features/photos/types'
 
 const URLs = {
     uploadPhoto: '/api/photos',
@@ -23,14 +23,14 @@ export function uploadPhoto(request: UploadPhotoRequest): Promise<unknown> {
     })
 }
 
-export function getPhotos(): Promise<unknown> {
+export function getPhotos(): Promise<GetPhotosResponse> {
     return fetch(URLs.getPhotos, {
         method: 'GET',
     }).then((response) => {
         if (!response.ok) {
             throw new Error(`Failed to fetch photos: ${response.statusText}`)
         }
-        return response.json()
+        return response.json() as Promise<GetPhotosResponse>
     })
 }
 
@@ -43,7 +43,7 @@ export function getPhotoById(id: string): Promise<unknown> {
                 `Failed to fetch photo by id: ${response.statusText}`
             )
         }
-        return response.json()
+        return response.blob()
     })
 }
 

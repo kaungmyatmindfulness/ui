@@ -7,3 +7,5 @@ export interface UploadPhotoRequest {
     photo: File
     metadata: UploadPhotoMetaData
 }
+
+export type GetPhotosResponse = string[]
