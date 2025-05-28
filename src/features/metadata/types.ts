@@ -1,4 +1,8 @@
 export interface Metadata {
-    updatedAt: string
-    tags: string[]
+    updatedAt?: string | null
+    tags?: string[] | null
+}
+
+export interface EditMetadata {
+    metadata: Metadata
 }

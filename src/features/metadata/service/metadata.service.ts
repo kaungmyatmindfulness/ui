@@ -1,4 +1,4 @@
-import { Metadata } from '@/features/metadata/types'
+import { EditMetadata, Metadata } from '@/features/metadata/types'
 
 const URLs = {
     getMetadataById: (id: string) => `/api/metadata/${id}`,
@@ -20,8 +20,8 @@ export function getMetadataById(id: string): Promise<Metadata> {
 
 export function updateMetadataById(
     id: string,
-    metadata: Metadata
-): Promise<Metadata> {
+    metadata: EditMetadata
+): Promise<unknown> {
     return fetch(URLs.updateMetadataById(id), {
         method: 'PUT',
         headers: {
@@ -34,6 +34,6 @@ export function updateMetadataById(
                 `Failed to update metadata by id: ${response.statusText}`
             )
         }
-        return response.json() as Promise<Metadata>
+        return response.json()
     })
 }

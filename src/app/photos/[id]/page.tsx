@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button'
 import { getMetadataById } from '@/features/metadata/service/metadata.service'
 import Metadata from '@/features/metadata/ui/metadata'
+import MetadataEditDialog from '@/features/metadata/ui/metadata-edit-dialog'
 import Photo from '@/features/photos/ui/photo'
 import PhotoDeleteButton from '@/features/photos/ui/photo-delete-button'
 import {
@@ -35,7 +35,7 @@ export default async function PhotoDetailsPage({
                     </div>
                     <div className="mt-4 grid grid-cols-2 gap-2">
                         <PhotoDeleteButton id={id} />
-                        <Button variant="outline">Edit Metadata</Button>
+                        <MetadataEditDialog id={id} />
                     </div>
                 </div>
                 <HydrationBoundary state={dehydrate(queryClient)}>

@@ -29,7 +29,7 @@ export default function Metadata({ id }: MetadataProps) {
                     <span className="font-bold">Updated At:</span>
                     <span>
                         {metadata?.updatedAt
-                            ? format(metadata?.updatedAt, 'PPPP')
+                            ? format(metadata?.updatedAt, 'PPPP, p')
                             : 'N/A'}
                     </span>
                 </div>
