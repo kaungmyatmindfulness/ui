@@ -23,7 +23,7 @@ export default function Photo({ id }: PhotoProps) {
                 <div className="flex h-full w-full flex-col items-center justify-center gap-2">
                     <span>Error loading image.</span>
                     <Button size="sm" onClick={handleRetry}>
-                        Try Again
+                        Try again
                     </Button>
                 </div>
             ) : (

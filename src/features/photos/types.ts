@@ -4,7 +4,7 @@ interface UploadPhotoMetaData {
 }
 
 export interface UploadPhotoRequest {
-    photo: File
+    photo: Blob
     metadata: UploadPhotoMetaData
 }
 
